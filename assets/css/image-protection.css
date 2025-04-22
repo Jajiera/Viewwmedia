@@ -1,0 +1,27 @@
+/* Protección de imágenes */
+img {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+/* Efecto de desenfoque al intentar hacer captura */
+@media print {
+    img {
+        display: none !important;
+    }
+    body::after {
+        content: "Impresión no permitida";
+        display: block;
+        text-align: center;
+        font-size: 24px;
+        margin-top: 50px;
+    }
+} 
