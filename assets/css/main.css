@@ -233,7 +233,8 @@ input, select, textarea {
 	p {
 		font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 		margin: 0 0 2rem 0;
-        font-size: 1.1em; /* Aumentado de 1em */
+        font-size: 1.35em;
+        font-weight: 560;
 	}
 
 	h1, h2, h3, h4, h5, h6 {
@@ -679,7 +680,7 @@ input, select, textarea {
 			color: #a0a0a1;
 			cursor: pointer;
 			display: inline-block;
-			font-size: 1em;
+			font-size: 2em;
 			font-weight: 300;
 			padding-left: 2.4em;
 			padding-right: 0.75em;
@@ -2078,15 +2079,30 @@ input[type="radio"] + label {
 /* video */
 
 .container-vid {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.video-container {
     position: relative;
     width: 100%;
-    height: 118vh;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
     overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: -13vh;
-    z-index: 1;
+    background-color: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 .background-clip {
@@ -2183,25 +2199,63 @@ input[type="radio"] + label {
 		}
 
 		.wrapper.style3 p {
-			text-transform: uppercase;
-			font-size: .75rem;
-			font-weight: 300;
-			margin: 0 0 .5rem 0;
-			padding: 0 0 1rem 0;
-			letter-spacing: .25rem;
+			font-size: 2.5rem;
+			line-height: 1.2;
+			text-align: center;
+			margin: 0 auto;
+			max-width: 800px;
+			padding: 0 20px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
 		}
 
-			.wrapper.style3 p:after {
-				content: '';
-				position: absolute;
-				margin: auto;
-				right: 0;
-				bottom: 0;
-				left: 0;
-				width: 50%;
-				height: 1px;
-				background-color: #e48416
+		.wrapper.style3 p b {
+			font-size: 2.5rem;
+			color: #e48416;
+			text-align: center;
+			display: inline-block;
+		}
+
+		@media screen and (max-width: 1280px) {
+			.wrapper.style3 p {
+				font-size: 2.2rem;
+				max-width: 700px;
 			}
+			.wrapper.style3 p b {
+				font-size: 2.2rem;
+			}
+		}
+
+		@media screen and (max-width: 980px) {
+			.wrapper.style3 p {
+				font-size: 2rem;
+				max-width: 600px;
+			}
+			.wrapper.style3 p b {
+				font-size: 2rem;
+			}
+		}
+
+		@media screen and (max-width: 736px) {
+			.wrapper.style3 p {
+				font-size: 1.8rem;
+				max-width: 500px;
+			}
+			.wrapper.style3 p b {
+				font-size: 1.8rem;
+			}
+		}
+
+		@media screen and (max-width: 480px) {
+			.wrapper.style3 p {
+				font-size: 1.5rem;
+				max-width: 400px;
+			}
+			.wrapper.style3 p b {
+				font-size: 1.5rem;
+			}
+		}
 
 		.wrapper.style3:before {
 			-moz-transition: opacity 3s ease;
@@ -2529,7 +2583,7 @@ input[type="radio"] + label {
 		.title, .text, .photo, .divider2, 
 		.card-1, .card-2, .card-3, .card-4, .card-5, .card-6 {
 			width: 100%;
-			max-width: 600px;
+			max-width: 800px;
 			margin: 0 auto;
 			padding: 0 1rem;
 		}
@@ -2849,7 +2903,7 @@ input[type="radio"] + label {
 	height: 100%;
 	padding: 20px;
 	justify-items: center;
-		text-align: justify;
+	text-align: justify;
 	box-sizing: border-box;
 	background: rgba(0, 0, 0, 0.7) !important;
 	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1) !important;
@@ -2858,7 +2912,11 @@ input[type="radio"] + label {
 	border: 1px solid rgba(37, 37, 37, 0.2) !important;
 	opacity: 0;
 	transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-  z-index: 2;
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
   }
   
   .card:hover .card__content {
@@ -2874,6 +2932,11 @@ input[type="radio"] + label {
 	color: #d3d3d3;
 	line-height: 1.5;
 	margin: 0;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
   }
   
   .card:hover svg {
@@ -3196,7 +3259,7 @@ textarea {
 }
 
 .produccion-info {
-  padding: 1rem;
+  padding: 2.5rem;
   text-align: center;
 }
 
@@ -3565,4 +3628,191 @@ textarea {
     .container-services .title h2 {
         font-size: 1.4em;
     }
+}
+
+.wrapper.style3 .align-center {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6,
+.producciones-text h1,
+.producciones-text h2,
+.container-services .title h1,
+.container-services .title h2 {
+    font-family: 'Syncopate', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em;
+}
+
+.hero-text, .hero-text * {
+    font-family: 'Syncopate', sans-serif !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.08em;
+}
+
+.container-services .text p,
+.producciones-text p {
+    font-size: 1.35em;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.producciones-text h1,
+#cta h2 {
+    font-size: 3.2em !important;
+}
+@media screen and (max-width: 980px) {
+    .producciones-text h1,
+    #cta h2 {
+        font-size: 2.2em !important;
+    }
+}
+@media screen and (max-width: 736px) {
+    .producciones-text h1,
+    #cta h2 {
+        font-size: 1.6em !important;
+    }
+}
+
+.container-services .title h1 {
+    font-size: 3.2em !important;
+}
+@media screen and (max-width: 980px) {
+    .container-services .title h1 {
+        font-size: 2.2em !important;
+    }
+}
+@media screen and (max-width: 736px) {
+    .container-services .title h1 {
+        font-size: 1.6em !important;
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width: 1000px) {
+    .container-services {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto auto auto auto auto auto;
+        grid-template-areas:
+            "title title title"
+            "text text text"
+            "divider divider divider"
+            "card-1 card-2 card-3"
+            "card-4 card-5 card-6";
+        gap: 2rem 1.5rem;
+        justify-items: center;
+        align-items: start;
+        width: 100vw;
+        max-width: 1200px;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 0 1rem;
+    }
+    .container-services .title { grid-area: title; }
+    .container-services .text { grid-area: text; }
+    .container-services .divider { grid-area: divider; }
+    .container-services .card-1 { grid-area: card-1; }
+    .container-services .card-2 { grid-area: card-2; }
+    .container-services .card-3 { grid-area: card-3; }
+    .container-services .card-4 { grid-area: card-4; }
+    .container-services .card-5 { grid-area: card-5; }
+    .container-services .card-6 { grid-area: card-6; }
+    .container-services .divider {
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        margin: 0 auto 1.5rem auto !important;
+        width: 100% !important;
+        max-width: 500px !important;
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+    .container-services .loop.cubes {
+        margin: 0 auto !important;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+    }
+    .container-services .text {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+    .container-services .text p {
+        margin-bottom: 0 !important;
+        margin: 0 !important;
+    }
+    .container-services .photo {
+        display: block !important;
+        width: 100%;
+        max-width: 500px;
+        height: auto;
+        aspect-ratio: 16/9;
+        margin: 0 auto 1.5rem auto;
+        object-fit: cover;
+        overflow: hidden;
+    }
+    .container-services .photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        aspect-ratio: 16/9;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .container-services .photo {
+        display: none !important;
+    }
+    .container-services .divider2 {
+        grid-area: unset !important;
+        order: 2;
+        margin: 2rem auto 0 auto !important;
+        display: block !important;
+        width: 80% !important;
+        max-width: 400px !important;
+        background-color: #ff9900 !important;
+        height: 2px !important;
+        border: none !important;
+        position: relative !important;
+        left: 0 !important;
+        right: 0 !important;
+    }
+    .container-services .text {
+        order: 1;
+    }
+}
+
+#main .thumb:hover > .image img,
+#main .thumb:hover img {
+    filter: blur(4px) brightness(0.8);
+    transition: filter 0.3s ease;
+}
+
+#main .thumb > .image img,
+#main .thumb img {
+    transition: filter 0.3s ease;
+}
+
+textarea::placeholder,
+input::placeholder,
+textarea::-webkit-input-placeholder,
+input::-webkit-input-placeholder,
+textarea:-moz-placeholder,
+input:-moz-placeholder,
+textarea::-moz-placeholder,
+input::-moz-placeholder,
+textarea:-ms-input-placeholder,
+input:-ms-input-placeholder {
+    color: #707071 !important;
+    opacity: 1.0;
+    font-family: inherit;
+    font-size: 1.1em;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
 }
