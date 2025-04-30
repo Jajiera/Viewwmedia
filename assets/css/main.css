@@ -183,10 +183,10 @@ input, select, textarea {
 	}
 
 	p {
-		font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
 		margin: 0 0 2rem 0;
-        font-size: 1.35em;
-        font-weight: 560;
+		font-family: 'Bahnschrift Semi Light', 'Bahnschrift', sans-serif;
+		font-size: 1.35em;
+		font-weight: 500;
 	}
 
 	/* Media query para móvil: establece font-size base a 1rem */
@@ -3824,16 +3824,14 @@ input:-ms-input-placeholder {
   font-size: 1.5em !important;
 }
 
-/* Media query para text-white en móviles */
 @media screen and (max-width: 480px) {
   .text-white {
     font-size: 1.3em !important;
   }
 }
 
-/* Texto responsivo global - respetando tamaños originales */
 html {
-  font-size: 16px; /* Tamaño base para cálculos rem */
+  font-size: 16px;
 }
 
 @media screen and (max-width: 1680px) {
@@ -3856,66 +3854,49 @@ html {
   html { font-size: 11px; }
 }
 
-/* Solo añadimos clamp a los elementos que necesitan ajuste fluido */
 h1, h2, h3, h4, h5, h6, p {
-  /* No especificamos tamaños base para mantener los existentes */
-  /* Solo agregamos ajustes de ajuste fluido cuando sea necesario */
 }
-
-/* Ajustes específicos para texto destacado, usando clamp como mejora */
 .hero-text {
-  /* Mantiene su tamaño original pero con ajuste fluido */
   font-size: clamp(1rem, calc(0.8rem + 1vw), 1.5rem);
 }
 
-/* Las secciones importantes obtienen escalado fluido sin cambiar su tamaño base */
 #cta p {
   line-height: 1.6;
 }
 
 .text-white {
-  /* Agregamos !important para respetar la especificidad original */
   font-size: clamp(1.2em, calc(1.2em + 0.5vw), 1.5em) !important;
 }
-
-/* Los elementos con tamaños ya definidos usan calc+vw para escalar fluidamente */
 .produccion-info h3 {
-  /* Usamos tamaño original de 2.5rem como base */
   font-size: clamp(1.5rem, calc(1.2rem + 2vw), 2.5rem);
 }
 
-/* Estos selectores se mantienen tal cual están, solo aplicamos clamp para escala */
 .container-services .title h1, 
 .producciones-text h1 {
   font-size: clamp(1.8rem, calc(1.5rem + 1.5vw), 2.5rem);
 }
 
 .card__description {
-  /* Se ajusta de forma sutil para mantener legibilidad */
   font-size: clamp(0.8rem, calc(0.7rem + 0.5vw), 0.9rem);
 }
 
-/* Ajuste específico para el enlace text-white en el footer */
 footer .text-center a.text-white {
   font-size: 1em !important;
 }
 
-/* Ajuste para el texto de contacto en el footer */
 footer .d-flex .me-3 {
   font-size: 0.9em;
 }
 
-/* Estilos para el botón de contacto en el footer */
-/* From Uiverse.io by levxyca */ 
 button#contactFooterLink {
   font-size: 1.5rem;
-  color: #ff9900;
+  color: #e48416;
   text-transform: uppercase;
   padding: 10px 20px;
   border-radius: 10px;
-  border: 2px solid #ff9900;
+  border: 2px solid #e48416;
   background: #00000057;
-  box-shadow: 3px 3px #ff9900;
+  box-shadow: 3px 3px #e48416;
   cursor: pointer;
   margin: 35px 0;
   text-align: center;
@@ -3929,7 +3910,57 @@ button#contactFooterLink:active {
   transform: translate(3px, 3px);
 }
 
-/* Asegurarse que los campos específicos del formulario de contacto tengan el border-radius correcto */
 #name, #email, #message {
   border-radius: 10px;
+}
+
+/* Asegurar que otros elementos que contienen texto también usen la fuente */
+.text-white, 
+.container-services .text p,
+.producciones-text p,
+#cta p,
+#two .align-center p,
+#one p,
+.popup-content p {
+    font-family: 'Bahnschrift Semi Light', 'Bahnschrift', sans-serif;
+}
+
+/* Footer texts with Bahnschrift Semi Light */
+footer .me-3,
+footer .text-center a.text-white,
+button#contactFooterLink,
+footer .text-center p {
+    font-family: 'Bahnschrift Semi Light', 'Bahnschrift', sans-serif;
+
+}
+
+/* Copyright specific styling */
+footer .text-center p.p-3 {
+    font-family: 'Bahnschrift Semi Light', 'Bahnschrift', sans-serif;
+
+}
+
+/* Reset completo para todos los elementos importantes */
+input[type="text"], 
+input[type="email"], 
+textarea, 
+button, 
+.btn-submit, 
+#contactFooterLink, 
+.btn-submit *, 
+button#contactFooterLink *, 
+button b {
+  font-family: 'Bahnschrift Semi Light', 'Bahnschrift', sans-serif !important;
+  letter-spacing: 0.02em !important;
+}
+
+/* Estilos específicos para botones del formulario */
+.btn-submit {
+  font-family: 'Bahnschrift Semi Light', 'Bahnschrift', sans-serif !important;
+}
+
+.btn-submit b, 
+button#contactFooterLink b {
+  font-family: 'Bahnschrift Semi Light', 'Bahnschrift', sans-serif !important;
+  font-weight: 400 !important;
 }
