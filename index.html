@@ -14,6 +14,20 @@
 		<!-- Swiper CSS -->
 		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 		<link href="https://fonts.googleapis.com/css?family=Syncopate:700&display=swap" rel="stylesheet">
+		
+		<!-- Estilos inline para botones específicos -->
+		<style>
+		/* Usar Lato como alternativa a Bahnschrift Semi Light */
+		body, input, button, textarea, select, .btn-submit, #contactFooterLink, .text-white, p {
+		  font-family: 'Bahnschrift Semi Light', 'Bahnschrift' !important;
+		  font-weight: 400 !important;
+		}
+
+		.btn-submit b, button#contactFooterLink b, button b {
+		  font-family: 'Bahnschrift Semi Light', 'Bahnschrift' !important;
+		  font-weight: 500 !important;
+		}
+		</style>
 	</head>
 
 	<body class=" homepage  is-preload">
@@ -333,7 +347,7 @@
 			  <span class="close-btn">&times;</span>
 			  <h2><b style="color:  #fc8600; ">Contacto</b></h2>
 			  <p style="margin-bottom: 40px; color: #ffffff;">Bienvenidos a View Media creative solutions, cuéntanos tu idea:</p>
-			  <form id="contactForm">
+			  <form id="contactForm" action="send_email.php" method="post">
 				<div class="form-group">
 				  <input type="text" id="name" name="name" placeholder="Nombre" required>
 				</div>
@@ -343,7 +357,7 @@
 				<div class="form-group">
 				  <textarea id="message" name="message" placeholder="Mensaje" rows="5" required></textarea>
 				</div>
-				<button type="submit" class="btn-submit">Enviar</button>
+				<button type="submit" class="btn-submit"><b style="color:  #e48416; ">Enviar</b></button>
 			  </form>
 			</div>
 		  </div>
@@ -377,7 +391,7 @@
 					<div>
 						<p class="d-flex align-items-center mb-0">
 							<span class="me-3">Contacto</span>
-							<button id="contactFooterLink">¡Hablemos!</button>
+							<button id="contactFooterLink"><b style="color:  #e48416; ">¡Hablemos!</b></button>
 						</p>
 					</div>
 				</section>
